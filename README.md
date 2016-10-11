@@ -37,7 +37,6 @@ Download code examples for frontend and backend:
 wget https://raw.githubusercontent.com/crossbario/autobahn-python/master/examples/twisted/wamp/overview/backend.py
 wget https://raw.githubusercontent.com/crossbario/autobahn-python/master/examples/twisted/wamp/overview/frontend.py
 ```
-add unicode
 
 Change the AUTOBAHN_DEMO_ROUTER url (by default it is ws://localhost:8080/ws)
 ```
