@@ -42,7 +42,7 @@ Change the AUTOBAHN_DEMO_ROUTER url (by default it is ws://localhost:8080/ws)
 ```
 export AUTOBAHN_DEMO_ROUTER="wss://demo.crossbar.io/ws"
 ```
-nano
+
 
 ###Running the Examples
 
