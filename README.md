@@ -68,7 +68,7 @@ When I run
 ```
 python backend.py
 ```
-this error appear
+This error message appears
 ```sh
 2016-10-11T15:03:29+0000 wamp.error.no_such_realm: no realm "crossbardemo" exists on this router<br>
 ^C2016-10-11T15:03:35+0000 Received SIGINT, shutting down.<br>
