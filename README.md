@@ -1,4 +1,4 @@
-# crossbar_demo
+# crossbar_template
 
 Example that demonstrate WebSocket programming with Autobahn|Python on Twisted.<br>
 Fork from the twisted-native objects demo:<br>
