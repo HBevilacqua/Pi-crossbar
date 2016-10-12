@@ -44,7 +44,7 @@ export AUTOBAHN_DEMO_ROUTER="wss://demo.crossbar.io/ws"
 ```
 
 
-###Running the Examples
+###Running the examples
 
 Open three terminal sessions:
 
@@ -75,8 +75,8 @@ this error appear
 ```
 solution:<br>
 <br>
-The name of the realm in cat/home/pi/workspace/crossbarioexample/.crossbar/config.json<br>
-must be the same in backend.py and frontend.py (here it is "realm1").<br>
+The name of the realm in crossbar_demo/.crossbar/config.json<br>
+must be the same in the backend.py and frontend.py files (here it is "realm1").<br>
 
 ```py
 if __name__ == '__main__':
