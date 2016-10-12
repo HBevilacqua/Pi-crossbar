@@ -73,7 +73,7 @@ This error message appears
 2016-10-11T15:03:29+0000 wamp.error.no_such_realm: no realm "crossbardemo" exists on this router<br>
 ^C2016-10-11T15:03:35+0000 Received SIGINT, shutting down.<br>
 ```
-solution:<br>
+solution:
 <br>
 The name of the realm in crossbar_demo/.crossbar/config.json<br>
 must be the same in the backend.py and frontend.py files (here it is "realm1").<br>
