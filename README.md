@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # crossbar_template
 
 Example that demonstrate WebSocket programming with Autobahn|Python on Twisted.<br>
@@ -86,3 +87,6 @@ if __name__ == '__main__':
         u"realm1",
     )
 ```
+=======
+# Pi-crossbar
+>>>>>>> 688282aae9b3f4ef6835600975d1e732687af314
