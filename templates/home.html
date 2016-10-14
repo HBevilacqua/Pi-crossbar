@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Webapp</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+    </head>
+
+    <body>
+        <a href="/led">On/Off</a>
+        <div class="text-center">
+            <a href="{{ url_for('home') }}"><i class="fa fa-calendar fa-6"></i></a>
+        </div>
+        <script>
+            var connection = new autobahn.Connection({
+                url: "ws://127.0.0.1:8080/ws",
+                realm: 'realm1'
+            });
+            
+            connection.onopen = function (session) {
+                
+                console.log("connected");
+                session.subscribe("com.example.on_visit", function (args, kwargs) {
+                    console.log("got event:", args, kwargs);
+                }).then(
+                    function (sub) {
+                    console.log("subscribed", sub.id);
+                    },
+                    function (err) {
+                    console.log("error:", err);
+                    }
+                );
+            };
+
+            connection.open();
+        </script>
+    </body>
+</html>
