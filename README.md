@@ -14,5 +14,5 @@ Step 1 (current):
 - the web application uses crochet
 - the backend implements a remote procedure, add2(x, y)
 - the web app can call this procedure because its connected to the same router and realm.
-![GitHub Logo](network.png)
+![GitHub Logo](screenshot/network.png)
 
