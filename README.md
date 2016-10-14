@@ -18,4 +18,4 @@ templates/home.html forked from https://github.com/crossbario/autobahn-python/bl
 ![GitHub Logo](screenshot/network.png)
 
 ### Step 2 (current):
-- add the remote procedure by the "TurnOnOff Pi LED" procedure
+- add the remote procedure to blink the raspberry pi LED
