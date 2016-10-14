@@ -13,5 +13,3 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - backend.py, presenting the "add2" remote procedure
 - the flask web application webbapp.py (frontend)
 - crochet lib (in webapp) to wait for asynchronous events
-- 
-- 
