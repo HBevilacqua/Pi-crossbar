@@ -1,8 +1,9 @@
-from flask import Flask
+from flask import Flask, render_template
 from crochet import setup, run_in_reactor, wait_for
 # crochet.setup() MUST be called before any Autobahn or Twisted imports
 setup()
 from autobahn.twisted.wamp import Application  # noqa
+from led_lib import ledOnOff
 
 # global WAMP app
 wapp = Application()
@@ -29,6 +30,18 @@ def index():
     print "add result:", result
     return "x: %s, y: %s, result: %s" % (x, y, result)
 
+@app.route('/led') # URL to chose the mode
+@app.route('/led/<status>') # on/off mode URL
+def led(status = None): #None : optional parameter
+    status_bool = False
+    if status is not None and status == 'on':
+        status_bool = True
+    kwargs = {
+        'status': status_bool,
+    }
+    # call the "led_turn_on" remote procedure
+    call(u'com.myapp.led_turn_on', **kwargs)
+    return render_template('led.html', **kwargs)
 
 if __name__ == '__main__':
     # this will start the WAMP app on a background thread and setup communication

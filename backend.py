@@ -13,12 +13,14 @@ class MyComponent(ApplicationSession):
         def add2(x, y):
             print "MyComponent.add2"
             return x + y
+        # bind add2 method to the com.myapp.add2 uri
         yield self.register(add2, u'com.myapp.add2')
 
         # other RPC (raspberry)
-        #def led_turn_on(status):
-        #    print "ledOnOff(status)"
-        #yield self.register(led_turn_on, u'com.myapp.let_turn_on')
+        def led_turn_on(status):
+            print "ledOnOff(status)"
+            ledOnOff(status)
+        yield self.register(led_turn_on, u'com.myapp.led_turn_on')
 
 if __name__ == '__main__':
     # retrieves the environment variables
