@@ -7,11 +7,12 @@
         <meta name="description" content="">
         <meta name="author" content="">
     </head>
-
     <body>
-        <a href="/led">On/Off</a>
+        "add2" remote procedure: {{ data.x }} + {{ data.y }} = {{ data.result }}
+        <br>
+        <a href="/led">LED management</a>
         <div class="text-center">
-            <a href="{{ url_for('home') }}"><i class="fa fa-calendar fa-6"></i></a>
+            <a href="{{ url_for('homepage') }}"><i class="fa fa-calendar fa-6"></i></a>
         </div>
         <script>
             var connection = new autobahn.Connection({
@@ -36,5 +37,5 @@
 
             connection.open();
         </script>
-    </body>
+    </body
 </html>

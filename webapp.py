@@ -18,7 +18,7 @@ def call(name, *args, **kwargs):
     return wapp.session.call(name, *args, **kwargs)
 
 @app.route('/')
-def index():
+def homepage():
     x = 40
     y = 2
     kwargs = {
@@ -27,8 +27,11 @@ def index():
     }
     # call the "add2" remote procedure
     result = call(u'com.myapp.add2', **kwargs)
-    print "add result:", result
-    return "x: %s, y: %s, result: %s" % (x, y, result)
+    data = {
+        'result': result,
+    }
+    data.update(kwargs)
+    return render_template('home.html', data=data)
 
 @app.route('/led') # URL to chose the mode
 @app.route('/led/<status>') # on/off mode URL
