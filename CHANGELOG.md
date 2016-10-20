@@ -11,7 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 - remode java script dead code in home.html
 
-##[v20161020step2] (step 2)
+##[v20101020step2] (step 2)
 ### Added
 - change the home page
 
