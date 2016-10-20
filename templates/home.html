@@ -14,28 +14,5 @@
         <div class="text-center">
             <a href="{{ url_for('homepage') }}"><i class="fa fa-calendar fa-6"></i></a>
         </div>
-        <script>
-            var connection = new autobahn.Connection({
-                url: "ws://127.0.0.1:8080/ws",
-                realm: 'realm1'
-            });
-            
-            connection.onopen = function (session) {
-                
-                console.log("connected");
-                session.subscribe("com.example.on_visit", function (args, kwargs) {
-                    console.log("got event:", args, kwargs);
-                }).then(
-                    function (sub) {
-                    console.log("subscribed", sub.id);
-                    },
-                    function (err) {
-                    console.log("error:", err);
-                    }
-                );
-            };
-
-            connection.open();
-        </script>
     </body
 </html>
