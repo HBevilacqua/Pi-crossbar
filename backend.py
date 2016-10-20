@@ -24,9 +24,9 @@ class MyComponent(ApplicationSession):
 
 if __name__ == '__main__':
     # retrieves the environment variables
-    env_var = environ.get("AUTOBAHN_DEMO_ROUTER", u"ws://127.0.0.1:8080/ws")
+    env_var = environ.get("CROSSBAR_ROUTER_ADDRESS", u"ws://127.0.0.1:8080/ws")
     runner = ApplicationRunner(
-        env_var,
+        unicode(env_var),
         u"realm1",
     )
     runner.run(MyComponent)
