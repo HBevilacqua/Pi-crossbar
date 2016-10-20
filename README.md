@@ -19,9 +19,11 @@ release: https://github.com/HBevilacqua/Pi-crossbar/releases/tag/v20161014pm
 ![GitHub Logo](screenshot/network.png)
 
 ### Step 2:
-release: https://github.com/HBevilacqua/Pi-crossbar/releases/tag/v20161014pm2
+release: https://github.com/HBevilacqua/Pi-crossbar/releases/tag/v20161020step2
 - add the remote procedure to blink the raspberry pi LED
 
 ### Step 3 (current):
-release:
-- the crossbar router is hosted by another machine
+release: https://github.com/HBevilacqua/Pi-crossbar/releases/tag/v20161020step3
+- the crossbar router is no longer hosted by the raspberry pi but by another node (for example my computer)
+- you have to set the CROSSBAR_ROUTER_ADDRESS environment variable (raspberry side) with the new crossbar ip address 
+before launchong the backend.py and the webapp.py
