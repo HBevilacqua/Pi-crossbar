@@ -25,5 +25,5 @@ release: https://github.com/HBevilacqua/Pi-crossbar/releases/tag/v20101020step2
 ### Step 3 (current):
 release: https://github.com/HBevilacqua/Pi-crossbar/releases/tag/v20161020step3
 - the crossbar router is no longer hosted by the raspberry pi but by another node (for example my computer)
-- you have to set the CROSSBAR_ROUTER_ADDRESS environment variable (raspberry side) with the new crossbar ip address 
-before launchong the backend.py and the webapp.py
+- you have to set the CROSSBAR_ROUTER_ADDRESS environment variable  with the new crossbar ip address 
+before launching the backend.py and the webapp.py
