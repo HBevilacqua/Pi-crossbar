@@ -4,7 +4,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/) 
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-##[v20161014pm2]
+##[v20161020step3] (Step 3)
+### Added
+- the crossbar router is no longer hosted by the raspberry pi
+- create the "COSSBAR_ROUTER_ADDRESS" environment variable (export CROSSBAR_ROUTER_ADDRESS=ws://aaa.bbb.xxx.yyy:8080/ws)
+### Fixed
+- remode java script dead code in home.html
+
+##[v20161020step2] (step 2)
+### Added
+- change the home page
+
+##[v20161014pm2] (step 1)
 ### Added
 - the remote procedure to turn on/off the raspberry pi LED
 
