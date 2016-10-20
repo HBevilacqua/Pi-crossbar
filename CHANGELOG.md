@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ##[v20161020step3] (Step 3)
 ### Added
 - the crossbar router is no longer hosted by the raspberry pi
-- create the "COSSBAR_ROUTER_ADDRESS" environment variable (export CROSSBAR_ROUTER_ADDRESS=ws://aaa.bbb.xxx.yyy:8080/ws)
+- create the "COSSBAR_ROUTER_ADDRESS" environment variable (export CROSSBAR_ROUTER_ADDRESS=ws://aaa.bbb.xxx.yyy:8080/ws)<br>
 ### Fixed
 - remode java script dead code in home.html
 
