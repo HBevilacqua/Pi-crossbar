@@ -2,3 +2,4 @@ venv
 .crossbar/key.priv
 .crossbar/key.pub
 *.pyc
+*.swp
