@@ -10,7 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - create the "COSSBAR_ROUTER_ADDRESS" environment variable (export CROSSBAR_ROUTER_ADDRESS=ws://aaa.bbb.xxx.yyy:8080/ws)<br>
 
 ### Fixed
-- remode java script dead code in home.html
+- delete unused java script code in home.html
 
 ##[v20101020step2] (step 2)
 ### Added
