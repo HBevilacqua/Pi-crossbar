@@ -19,7 +19,7 @@ release: https://github.com/HBevilacqua/Pi-crossbar/releases/tag/v20161014pm
 ![GitHub Logo](screenshot/network.png)
 
 ### Step 2:
-release: https://github.com/HBevilacqua/Pi-crossbar/releases/tag/v20161020step2
+release: https://github.com/HBevilacqua/Pi-crossbar/releases/tag/v20101020step2
 - add the remote procedure to blink the raspberry pi LED
 
 ### Step 3 (current):
