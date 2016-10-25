@@ -15,7 +15,7 @@ release: https://github.com/HBevilacqua/Pi-crossbar/releases/tag/v20161014pm
 - all nodes are hosted on the Raspeberry Pi itself
 - the web application uses crochet
 - the backend implements a remote procedure, add2(x, y)
-- the web app can call this procedure because its connected to the same router and realm.
+- the web app can call this procedure because it is connected to the same router and realm.
 ![GitHub Logo](screenshot/network.png)
 
 ### Step 2:
