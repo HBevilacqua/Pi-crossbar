@@ -1,8 +1,9 @@
 # Pi-crossbar
 
-Flask Web application with Autobahn WAMP code using Crochet.
-This application drives a LED via a raspberry pi.
-The user is able to launch it from any platform (mobile device, computer, etc).
+This application drives a LED via a raspberry pi.<br>
+To better understand the crossbar concept, I divided this project into 4 parts.<br>
+In the last part, the user is able to drive the LED from any platform (mobile device, computer, etc), no need to be inside the backend network.<br>
+For example, from my office or from another place, I can drive the LED (and then the raspberry pi) which is located in my house.<br>
 
 ### Step 1:
 release: https://github.com/HBevilacqua/Pi-crossbar/releases/tag/v20161014pm
