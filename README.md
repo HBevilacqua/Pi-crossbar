@@ -14,7 +14,7 @@ release: https://github.com/HBevilacqua/Pi-crossbar/releases/tag/v20161014pm
 - the web app can call this procedure because it is connected to the same router and realm.
 ![GitHub Logo](screenshot/network.png)
 
-#### Sources:
+##### Sources (for thestep 1):
 backend.py/frontend.py forked from https://github.com/HBevilacqua/crossbar_template
 
 webapp.py forked from https://github.com/crossbario/autobahn-python/blob/224370cd9dda312fc0583b61ed416b3f4d0e00d0/examples/twisted/wamp/app/crochet/example1/server.py
@@ -34,11 +34,25 @@ release: https://github.com/HBevilacqua/Pi-crossbar/releases/tag/v20161020step3
 before launching the backend.py and the webapp.py
 
 ### Step 4:
-- cloud = internet
-- The crossbar router is deployed through Heroku<br>
+1. Deploy your owm crossbar router through Heroku<br>
 fork from: https://github.com/AndreMiras/crossbar-hello-python-to-heroku.git
-- The flask application (frontend) runs also on Heroku<br>
+  - Click on the "Deploy to heroku" button<br>
+  - Give a name to your node, ex: "crossbarnode"
+  - Your app can be found at https://crossbarnode.herokuapp.com/
+2. The backend runs on the raspberry pi to drive the LED<br>
+  - export CROSSBAR_ROUTER_ADDRESS=wss://crossbarnode.herokuapp.com/ws - start the backend: python backend.py 
+3. The flask application (frontend) runs also on Heroku<br>
 fork from: https://github.com/AndreMiras/flask-autobahn-to-heroku.git
-- The backend runs on the raspberry pi to drive the LED
-- the web browser runs on my mobile phone<br>
+  - git init
+  - design your webapp...
+  - git add .
+  - git commit -m "Initial commit"
+  - wget https://s3.amazonaws.com/assets.heroku.com/heroku-client/heroku-client.tgz
+  - tar -xvzf heroku-client.tgz --directory ~/bin/
+  - echo 'export PATH="${PATH}:~/bin/heroku-client/bin/"' >> ~/.bashrc
+  - . ~/.bashrc
+  - heroku create
+  - git push heroku master
+  - heroku config:set ROUTER_ADDRESS=wss://crossbarnode.herokuapp.com/ws
+4. the web browser runs on my mobile phone<br>
 ![GitHub Logo](screenshot/network_Step4.png)
