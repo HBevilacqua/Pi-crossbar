@@ -50,8 +50,14 @@ before launching the backend.py and the webapp.py
   - Your app can be found at https://crossbarnode.herokuapp.com/
   
 ##### 2. The backend runs on the raspberry pi to drive the LED
+Update the CROSSBAR_ROUTER_ADDRESS environment variable according to the crossbar node:
 ```
-$ export CROSSBAR_ROUTER_ADDRESS=wss://crossbarnode.herokuapp.com/ws - start the backend: python backend.py 
+$ export CROSSBAR_ROUTER_ADDRESS=wss://crossbarnode.herokuapp.com/ws 
+```
+
+start the backend:
+```
+python backend.py
 ```
 
 ##### 3. The flask application (frontend) runs also on Heroku
@@ -69,14 +75,14 @@ Heroku uses a Procfile to determine what commands to use to start your app:
 ```
 echo "web: gunicorn webapp:app" > Procfile
 ```
-Download and extract the client tarball:
+Download and extract the Heroku client tarball:
 ```
 $ wget https://s3.amazonaws.com/assets.heroku.com/heroku-client/heroku-client.tgz
 $ tar -xvzf heroku-client.tgz --directory ~/bin/
 $ echo 'export PATH="${PATH}:~/bin/heroku-client/bin/"' >> ~/.bashrc
 $ . ~/.bashrc
 ```
-Create the app on Heroku:
+Create the app on Heroku (ex: https://warm-shore-87822.herokuapp.com/):
 ```
 $ heroku create
 ```
