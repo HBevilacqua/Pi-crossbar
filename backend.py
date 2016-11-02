@@ -1,32 +1,46 @@
+from __future__ import division
+from platform import system, release
 from os import environ
 from twisted.internet.defer import inlineCallbacks
-from twisted.internet.task import LoopingCall
 from autobahn.twisted.wamp import ApplicationSession, ApplicationRunner
 from led_lib import ledOnOff
 
-# This class presents our lib to the crossbar router
-class MyComponent(ApplicationSession):
-    # calls onJoin when it joins the realm1
-    @inlineCallbacks 
-    def onJoin(self, details):
-        # RPC, callee side
-        def add2(x, y):
-            print "MyComponent.add2"
-            return x + y
-        # bind add2 method to the com.myapp.add2 uri
-        yield self.register(add2, u'com.myapp.add2')
+class Component(ApplicationSession):
+    """
+    An application component providing procedures with different kinds
+    of arguments.
+    """
 
-        # other RPC (raspberry)
+    @inlineCallbacks
+    def onJoin(self, details):
+        print("session attached")
+
+        def on_topic(title):
+            print("Got event: {}".format(title))
+
+        def platform():
+            print "backend platform()"
+            return [system(), release()]
+
+        def divide(a, b):
+            print "backend divide()"
+            return a / b
+
         def led_turn_on(status):
-            print "ledOnOff(status)"
+            print "ledOnOff()"
             ledOnOff(status)
+
+        yield self.subscribe(on_topic, u'com.myapp.topic')
+        yield self.register(platform, u'com.myapp.platform')
+        yield self.register(divide, u'com.myapp.divide')
         yield self.register(led_turn_on, u'com.myapp.led_turn_on')
+        print("Procedures registered; ready for frontend.")
+
 
 if __name__ == '__main__':
-    # retrieves the environment variables
-    env_var = environ.get("CROSSBAR_ROUTER_ADDRESS", u"ws://127.0.0.1:8080/ws")
+    router_address = environ.get("ROUTER_ADDRESS", u"ws://127.0.0.1:8080/ws")
     runner = ApplicationRunner(
-        unicode(env_var),
+        unicode(router_address),
         u"realm1",
     )
-    runner.run(MyComponent)
+    runner.run(Component)

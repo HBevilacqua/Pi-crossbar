@@ -1,18 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>Webapp</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="">
-        <meta name="author" content="">
-    </head>
-    <body>
-        "add2" remote procedure: {{ data.x }} + {{ data.y }} = {{ data.result }}
-        <br>
-        <a href="/led">LED management</a>
-        <div class="text-center">
-            <a href="{{ url_for('homepage') }}"><i class="fa fa-calendar fa-6"></i></a>
-        </div>
-    </body
-</html>
+{% extends "base.html" %}
+
+{% block wraptitle %}
+<div class="text-center">
+  <h1>Home</h1>
+</div> <!-- text-centered -->
+{% endblock wraptitle %}
+
+{% block content %}
+<ul class="list-group">
+  <li class="list-group-item"><a href="{{ url_for('rpc_platform') }}">RPC Platform</a></li>
+  <li class="list-group-item"><a href="{{ url_for('rpc_divide') }}">RPC Divide</a></li>
+  <li class="list-group-item"><a href="{{ url_for('publish_topic') }}">Publish Topic</a></li>
+  <li class="list-group-item"><a href="{{ url_for('led_turn_on') }}">RPC Led</a></li>
+</ul>
+{% endblock content %}

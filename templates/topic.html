@@ -1,12 +1,12 @@
+{% extends "base.html" %}
+
 {% block wraptitle %}
 <div class="text-center">
-  <h1>RPC Led</h1>
+  <h1>Publish Topic</h1>
 </div> <!-- text-centered -->
-<a href="/led/on">ON</a>
-<a href="/led/off">OFF</a>
 {% endblock wraptitle %}
 
 {% block content %}
-led state: {{ status }}
+<p>Title: {{ title }}</p>
+<p>Check the backend.py console output.</p>
 {% endblock content %}
-
