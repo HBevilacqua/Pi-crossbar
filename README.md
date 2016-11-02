@@ -20,7 +20,7 @@ release: https://github.com/HBevilacqua/Pi-crossbar/releases/tag/v20161014pm
 - the web app can call this procedure because it is connected to the same router and realm.
 ![GitHub Logo](screenshot/network.png)
 
-##### Sources (for thestep 1):
+##### Sources:
 backend.py/frontend.py forked from https://github.com/HBevilacqua/crossbar_template
 
 webapp.py forked from https://github.com/crossbario/autobahn-python/blob/224370cd9dda312fc0583b61ed416b3f4d0e00d0/examples/twisted/wamp/app/crochet/example1/server.py
@@ -40,32 +40,52 @@ release: https://github.com/HBevilacqua/Pi-crossbar/releases/tag/v20161020step3
 before launching the backend.py and the webapp.py
 
 ### Step 4: Use Heroku, a cloud platform as a service (PaaS)
-1.Deploy your owm crossbar router through Heroku
+##### 1. Deploy your owm crossbar router through Heroku
+> **Note:**
+> You have to create your account on Heroku.
+
   - Go to https://github.com/AndreMiras/crossbar-hello-python-to-heroku.git
-  - Click on the "Deploy to heroku" button
+  - Click on the "Deploy to Heroku" button
   - Give a name to your node, ex: "crossbarnode"
   - Your app can be found at https://crossbarnode.herokuapp.com/
-2.The backend runs on the raspberry pi to drive the LED
+##### 2. The backend runs on the raspberry pi to drive the LED
 ```
-export CROSSBAR_ROUTER_ADDRESS=wss://crossbarnode.herokuapp.com/ws - start the backend: python backend.py 
+$ export CROSSBAR_ROUTER_ADDRESS=wss://crossbarnode.herokuapp.com/ws - start the backend: python backend.py 
 ```
-3.The flask application (frontend) runs also on Heroku<br>
-fork from: https://github.com/AndreMiras/flask-autobahn-to-heroku.git
+
+##### 3. The flask application (frontend) runs also on Heroku
+> **Note:**
+> If you do not wish start your webapp from scratch, use a template forked from https://github.com/AndreMiras/flask-autobahn-to-heroku.git and follow the README instructions to start/shutdown your Heroku application.
+
+Create a new git repository:
 ```
-git init
+$ cd flask_app_on_heroku
+$ git init
+$ git add .
+$ git commit -m "Initial commit"
 ```
-Design your webapp...
+Heroku uses a Procfile to determine what commands to use to start your app:
 ```
-git add .
-git commit -m "Initial commit"
-wget https://s3.amazonaws.com/assets.heroku.com/heroku-client/heroku-client.tgz
-tar -xvzf heroku-client.tgz --directory ~/bin/
-echo 'export PATH="${PATH}:~/bin/heroku-client/bin/"' >> ~/.bashrc
-. ~/.bashrc
-heroku create
-git push heroku master
-heroku config:set ROUTER_ADDRESS=wss://crossbarnode.herokuapp.com/ws
+echo "web: gunicorn webapp:app" > Procfile
 ```
-4.the web browser runs on my mobile phone<br>
-Once the crossbar/webapp run on Heroku and the backend on your Raspberry pi, open a web browser and visit the webapp web page of to use the application.
+Download and extract the client tarball:
+```
+$ wget https://s3.amazonaws.com/assets.heroku.com/heroku-client/heroku-client.tgz
+$ tar -xvzf heroku-client.tgz --directory ~/bin/
+$ echo 'export PATH="${PATH}:~/bin/heroku-client/bin/"' >> ~/.bashrc
+$ . ~/.bashrc
+```
+Create the app on Heroku:
+```
+$ heroku create
+```
+Design your webapp, commmit your local changes...<br>
+Deploy and start the app:
+```
+$ git push heroku master
+$ heroku config:set ROUTER_ADDRESS=wss://crossbarnode.herokuapp.com/ws
+```
+
+##### 4. The web browser runs on my mobile phone
+Once the crossbar/webapp run on Heroku and the backend on your Raspberry pi, open a web browser and visit the web page to use the application.<br>
 ![GitHub Logo](screenshot/network_Step4.png)
