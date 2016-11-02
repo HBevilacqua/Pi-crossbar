@@ -10,6 +10,7 @@ For example, from my office I can drive the LED (and then the raspberry pi) whic
 - Step 2: Add a new RPC
 - Step 3: See the crossbar node dependance
 - Step 4: Use Heroku, a cloud platform as a service (PaaS)
+- Heroku CLI helper
 
 ### Step 1: Understand the role of each node
 release: https://github.com/HBevilacqua/Pi-crossbar/releases/tag/v20161014pm
@@ -96,3 +97,27 @@ $ heroku config:set ROUTER_ADDRESS=wss://crossbarnode.herokuapp.com/ws
 ##### 4. The web browser runs on my mobile phone
 Once the crossbar/webapp run on Heroku and the backend on your Raspberry pi, open a web browser and visit the web page to use the application.<br>
 ![GitHub Logo](screenshot/network_Step4.png)
+
+### Heroku CLI helper
+
+Log in using the email address and password you used when creating your Heroku account:
+```
+heroku login
+```
+Create an app:
+```
+heroku create
+```
+See your apps:
+```
+heroku apps
+```
+Scale up (start) an app:
+```
+heroku ps:scale --app your-app_name web=1
+```
+Scale down (stop) an app:
+```
+heroku ps:scale --app your-app_name web=0
+```
+see also: https://devcenter.heroku.com/articles/using-the-cli
