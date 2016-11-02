@@ -50,9 +50,9 @@ before launching the backend.py and the webapp.py
   - Your app can be found at https://crossbarnode.herokuapp.com/
   
 ##### 2. The backend runs on the raspberry pi to drive the LED
-Update the CROSSBAR_ROUTER_ADDRESS environment variable according to the crossbar node:
+Update the ROUTER_ADDRESS environment variable according to the crossbar node:
 ```
-$ export CROSSBAR_ROUTER_ADDRESS=wss://crossbarnode.herokuapp.com/ws 
+$ export ROUTER_ADDRESS=wss://crossbarnode.herokuapp.com/ws 
 ```
 
 start the backend:
