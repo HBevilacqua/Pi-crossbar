@@ -100,24 +100,38 @@ Once the crossbar/webapp run on Heroku and the backend on your Raspberry pi, ope
 
 ### Heroku CLI helper
 
+The name of my webapp dyno is "web", see the Procfile.
+
 Log in using the email address and password you used when creating your Heroku account:
 ```
-heroku login
+$ heroku login
 ```
 Create an app:
 ```
-heroku create
+$ heroku create
 ```
 See your apps:
 ```
-heroku apps
+$ heroku apps
 ```
 Scale up (start) an app:
 ```
-heroku ps:scale --app your-app_name web=1
+$ heroku ps:scale --app your-app-name web=1
 ```
 Scale down (stop) an app:
 ```
-heroku ps:scale --app your-app_name web=0
+$ heroku ps:scale --app your-app-name web=0
+```
+Check an app activity:
+```
+$ heroku ps --app your-app-name
+```
+Run/See one-off dynos in action, execute the bash command
+```
+$ heroku run bash --app warm-shore-87822
+```
+In bash mode, exit/shut down the current one-off dyno 
+```
+$ exit
 ```
 see also: https://devcenter.heroku.com/articles/using-the-cli
