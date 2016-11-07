@@ -4,6 +4,8 @@ from os import environ
 from twisted.internet.defer import inlineCallbacks
 from autobahn.twisted.wamp import ApplicationSession, ApplicationRunner
 from led_lib import ledOnOff
+import logging
+logging.basicConfig()
 
 class Component(ApplicationSession):
     """
@@ -39,6 +41,7 @@ class Component(ApplicationSession):
 
 if __name__ == '__main__':
     router_address = environ.get("ROUTER_ADDRESS", u"ws://127.0.0.1:8080/ws")
+    print "router_address:", router_address
     runner = ApplicationRunner(
         unicode(router_address),
         u"realm1",
