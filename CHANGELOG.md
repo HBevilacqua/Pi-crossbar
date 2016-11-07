@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/) 
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+###[Unreleased]
+## Added
+- The crossbar router can be deployed on Heroku by following the README instructions (step 4)
+- The webapp flask application can be deployed on Heroku by following the README instructions (step 4)
+- The user is able to use the webapp from any platform which have access to the internet
+- Fork new rpc, new template form https://github.com/AndreMiras/flask-autobahn-to-heroku
+- Add README instructions to use Heroku
+
 ##[v20161020step3] (Step 3)
 ### Added
 - the crossbar router is no longer hosted by the raspberry pi
