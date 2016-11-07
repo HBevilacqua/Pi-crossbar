@@ -21,6 +21,8 @@ release: https://github.com/HBevilacqua/Pi-crossbar/releases/tag/v20161014pm
 - the web app can call this procedure because it is connected to the same router and realm.
 ![GitHub Logo](screenshot/network.png)
 
+*Figure 1: step 1 diagram*
+
 ##### Sources:
 backend.py/frontend.py forked from https://github.com/HBevilacqua/crossbar_template
 
@@ -87,7 +89,7 @@ Create the app on Heroku (ex: https://warm-shore-87822.herokuapp.com/):
 ```
 $ heroku create
 ```
-Design your webapp, commmit your local changes...<br>
+Design your webapp, commit your local changes...<br>
 Deploy and start the app:
 ```
 $ git push heroku master
@@ -97,6 +99,8 @@ $ heroku config:set ROUTER_ADDRESS=wss://crossbarnode.herokuapp.com/ws
 ##### 4. The web browser runs on my mobile phone
 Once the crossbar/webapp run on Heroku and the backend on your Raspberry pi, open a web browser and visit the web page to use the application.<br>
 ![GitHub Logo](screenshot/network_Step4.png)
+
+*Figure: Step 4 diagram*
 
 ### Heroku CLI helper
 
