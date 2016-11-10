@@ -1,6 +1,7 @@
 from os import environ
 from flask import Flask, render_template, url_for, redirect
 from crochet import setup, run_in_reactor, wait_for
+from pprint import pprint
 import logging
 logging.basicConfig()
 
@@ -69,7 +70,16 @@ def rpc_divide(a=None, b=None):
         "b": b,
         "result": result,
     }
+
+    sessions = call('wamp.session.list')
+    for session in sessions:
+        pprint("session: %s" % session)
+        session_info = call('wamp.session.get', session)
+        # pprint("session_info:"); pprint(session_info)
+        print "authrole: %s" % session_info['authrole']
+
     return render_template('divide.html', **data)
+
 
 @app.route('/led')
 @app.route('/led/<status>')
@@ -83,6 +93,7 @@ def led_turn_on(status = None):
     # call the "led_turn_on" remote procedure
     call(u'com.myapp.led_turn_on', **data)
     return render_template('led.html', **data)
+
 
 @app.route('/')
 def home():
