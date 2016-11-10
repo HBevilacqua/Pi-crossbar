@@ -27,7 +27,27 @@
                                     "cache": true
                                 }
                             ]
-                        }
+                        },
+			{
+                            "name": "backend",
+                            "permissions": [
+                                {
+                                    "uri": "",
+                                    "match": "prefix",
+                                    "allow": {
+                                        "call": true,
+                                        "register": true,
+                                        "publish": true,
+                                        "subscribe": true
+                                    },
+                                    "disclose": {
+                                        "caller": false,
+                                        "publisher": false
+                                    },
+                                    "cache": true
+                                }
+                            ]
+			}
                     ]
                 }
             ],
@@ -42,8 +62,23 @@
                     },
                     "websocket": {
                         "ws": {
-                            "type": "websocket"
-                        }
+                            "type": "websocket",
+			    "auth": {
+                                "ticket": {
+                                    "type": "static",
+                                    "principals": {
+                                        "backend_id": {
+                                            "ticket": "return_chall",
+                                            "role": "backend"
+					}
+				    }
+				},
+                                "anonymous": {
+                                    "type": "static",
+				    "role": "anonymous"
+				}
+                            }
+			}
                     },
                     "web": {
                         "paths": {
