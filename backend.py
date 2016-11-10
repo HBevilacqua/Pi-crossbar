@@ -14,6 +14,16 @@ class Component(ApplicationSession):
     of arguments.
     """
 
+    def onConnect(self):
+        self.join(self.config.realm, [u"ticket"], "backend_id")
+
+    def onChallenge(self, challenge):
+        if challenge.method == u"ticket":
+            print("backend: WAMP-Ticket challenge received: {}".format(challenge))
+            return "return_chall"
+        else:
+            raise Exception("Invalid authmethod {}".format(challenge.method))
+
     @inlineCallbacks
     def onJoin(self, details):
 
@@ -34,11 +44,11 @@ class Component(ApplicationSession):
         def led_turn_on(status):
             print "backend[%s] ledOnOff()" % self.args1
             ledOnOff(status)
-
-        yield self.subscribe(on_topic, u'com.myapp.topic'+self.args1)
-        yield self.register(platform, u'com.myapp.platform'+self.args1)
-        yield self.register(divide, u'com.myapp.divide'+self.args1)
-        yield self.register(led_turn_on, u'com.myapp.led_turn_on'+self.args1)
+	
+        yield self.subscribe(on_topic, u'com.myapp.topic')#+self.args1)
+        yield self.register(platform, u'com.myapp.platform')#+self.args1)
+        yield self.register(divide, u'com.myapp.divide')#+self.args1)
+        yield self.register(led_turn_on, u'com.myapp.led_turn_on')#+self.args1)
         print("backend[%s] Procedures registered; ready for frontend." % self.args1)
 
 
