@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - The user is able to use the webapp from any platform which have access to the internet
 - Fork new rpc, new templates from https://github.com/AndreMiras/flask-autobahn-to-heroku
 - Add README instructions to use Heroku
+- Add a ticket authentification between the crossbar node and the backend
 
 ##[v20161020step3] (Step 3)
 ### Added
