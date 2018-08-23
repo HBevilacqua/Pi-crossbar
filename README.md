@@ -97,7 +97,7 @@ $ heroku config:set ROUTER_ADDRESS=wss://crossbarnode.herokuapp.com/ws
 ```
 
 ##### 4. The web browser runs on my mobile phone
-Once the crossbar/webapp run on Heroku and the backend on your Raspberry pi, open a web browser and visit the web page to use the application.<br>
+Once the crossbar/webapp runs on Heroku and the backend on your Raspberry pi, open a web browser and visit the web page to use the application.<br>
 ![GitHub Logo](screenshot/network_Step4.png)
 
 *Figure: Step 4 diagram*
